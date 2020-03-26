@@ -1,0 +1,32 @@
+body{
+	background-image:url(../image/fond.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+nav{
+	border-color: rgba(34,34,34,0);
+}
+
+main > div > div > div > p{
+background-color: rgba(255,255,255,0.8); 
+border-radius: 10px;
+padding: 15px;
+}
+
+main > div > div > div > p > img{
+size: cover;
+max-width: 100%;
+padding: 0px;
+margin:2px;
+} 
+
+footer{
+	
+	bottom: 0;
+	border-color: rgba(34,34,34,0);
+	position: fixed;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
