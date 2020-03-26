@@ -9,8 +9,7 @@
 -- Structure de la table `account_activation`
 --
 
-DROP TABLE IF EXISTS `ACCOUNT_ACTIVATION`;
-CREATE TABLE IF NOT EXISTS `ACCOUNT_ACTIVATION` (
+CREATE TABLE  `ACCOUNT_ACTIVATION` (
   `id_active` int(11) NOT NULL AUTO_INCREMENT,
   `token` varchar(100) NOT NULL,
   `mail` varchar(60) NOT NULL,
@@ -23,8 +22,7 @@ CREATE TABLE IF NOT EXISTS `ACCOUNT_ACTIVATION` (
 -- Structure de la table `chat`
 --
 
-DROP TABLE IF EXISTS `CHAT`;
-CREATE TABLE IF NOT EXISTS `CHAT` (
+CREATE TABLE  `CHAT` (
   `id_chat` int(11) NOT NULL AUTO_INCREMENT,
   `message` varchar(255) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -42,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `CHAT` (
 -- Structure de la table `chef_doeuvre`
 --
 
-DROP TABLE IF EXISTS `CHEF_DOEUVRE`;
-CREATE TABLE IF NOT EXISTS `CHEF_DOEUVRE` (
+
+CREATE TABLE  `CHEF_DOEUVRE` (
   `id_chef_doeuvre` int(11) NOT NULL AUTO_INCREMENT,
   `path` varchar(100) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -63,8 +61,8 @@ INSERT INTO `CHEF_DOEUVRE` (`id_chef_doeuvre`, `path`, `id_user`) VALUES
 -- Structure de la table `games`
 --
 
-DROP TABLE IF EXISTS `GAMES`;
-CREATE TABLE IF NOT EXISTS `GAMES` (
+
+CREATE TABLE  `GAMES` (
   `id_game` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
   `draw` varchar(255) NOT NULL DEFAULT '../img/empty_canvas.png',
@@ -100,8 +98,8 @@ INSERT INTO `GAMES` (`id_game`, `name`, `draw`, `max_players`, `nb_player`, `R18
 -- Structure de la table `generate`
 --
 
-DROP TABLE IF EXISTS `GENERATE`;
-CREATE TABLE IF NOT EXISTS `GENERATE` (
+
+CREATE TABLE  `GENERATE` (
   `id_notif` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
@@ -115,8 +113,7 @@ CREATE TABLE IF NOT EXISTS `GENERATE` (
 -- Structure de la table `invite`
 --
 
-DROP TABLE IF EXISTS `INVITE`;
-CREATE TABLE IF NOT EXISTS `INVITE` (
+CREATE TABLE  `INVITE` (
   `id_notif` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id_notif`,`id_user`),
@@ -128,8 +125,8 @@ CREATE TABLE IF NOT EXISTS `INVITE` (
 -- Structure de la table `ladder`
 --
 
-DROP TABLE IF EXISTS `LADDER`;
-CREATE TABLE IF NOT EXISTS `LADDER` (
+
+CREATE TABLE  `LADDER` (
   `id_ladder` int(11) NOT NULL AUTO_INCREMENT,
   `rank` int(11) DEFAULT '0',
   `score` int(11) NOT NULL DEFAULT '0',
@@ -153,8 +150,8 @@ INSERT INTO `LADDER` (`id_ladder`, `rank`, `score`, `win`, `total`, `id_user`) V
 -- Structure de la table `notification`
 --
 
-DROP TABLE IF EXISTS `NOTFICATION`;
-CREATE TABLE IF NOT EXISTS `NOTFICATION` (
+
+CREATE TABLE  `NOTFICATION` (
   `id_notif` int(11) NOT NULL AUTO_INCREMENT,
   `link` varchar(255) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -170,8 +167,7 @@ CREATE TABLE IF NOT EXISTS `NOTFICATION` (
 -- Structure de la table `participate`
 --
 
-DROP TABLE IF EXISTS `PARTICIPATE`;
-CREATE TABLE IF NOT EXISTS `PARTICIPATE` (
+CREATE TABLE  `PARTICIPATE` (
   `id_game` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `word` varchar(27) DEFAULT NULL,
@@ -189,8 +185,7 @@ CREATE TABLE IF NOT EXISTS `PARTICIPATE` (
 -- Structure de la table `player_tour`
 --
 
-DROP TABLE IF EXISTS `PLAYER_TOUR`;
-CREATE TABLE IF NOT EXISTS `PLAYER_TOUR` (
+CREATE TABLE  `PLAYER_TOUR` (
   `id_player` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   PRIMARY KEY (`id_player`)
@@ -219,8 +214,8 @@ INSERT INTO `PLAYER_TOUR` (`id_player`, `username`) VALUES
 -- Structure de la table `proposals`
 --
 
-DROP TABLE IF EXISTS `PROPOSALS`;
-CREATE TABLE IF NOT EXISTS `PROPOSALS` (
+
+CREATE TABLE  `PROPOSALS` (
   `id_chat` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -235,8 +230,8 @@ CREATE TABLE IF NOT EXISTS `PROPOSALS` (
 -- Structure de la table `signup`
 --
 
-DROP TABLE IF EXISTS `SIGNUP`;
-CREATE TABLE IF NOT EXISTS `SIGNUP` (
+
+CREATE TABLE  `SIGNUP` (
   `id_tournament` int(11) NOT NULL,
   `id_player` int(11) NOT NULL,
   PRIMARY KEY (`id_tournament`,`id_player`),
@@ -250,8 +245,8 @@ CREATE TABLE IF NOT EXISTS `SIGNUP` (
 -- Structure de la table `subjects`
 --
 
-DROP TABLE IF EXISTS `SUBJECTS`;
-CREATE TABLE IF NOT EXISTS `SUBJECTS` (
+
+CREATE TABLE  `SUBJECTS` (
   `id_sub` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(27) DEFAULT NULL,
   `R18` tinyint(1) DEFAULT '0',
@@ -273,8 +268,8 @@ INSERT INTO `SUBJECTS` (`id_sub`, `name`, `R18`, `active`) VALUES
 -- Structure de la table `tournament`
 --
 
-DROP TABLE IF EXISTS `TOURNAMENT`;
-CREATE TABLE IF NOT EXISTS `TOURNAMENT` (
+
+CREATE TABLE  `TOURNAMENT` (
   `id_tournament` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   PRIMARY KEY (`id_tournament`)
@@ -286,8 +281,8 @@ CREATE TABLE IF NOT EXISTS `TOURNAMENT` (
 -- Structure de la table `user`
 --
 
-DROP TABLE IF EXISTS `USER`;
-CREATE TABLE IF NOT EXISTS `USER` (
+
+CREATE TABLE  `USER` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `mail` varchar(60) NOT NULL,
   `username` varchar(20) NOT NULL,
@@ -316,8 +311,7 @@ INSERT INTO `USER` (`id_user`, `mail`, `username`, `password`, `statut`, `banned
 -- Structure de la table `vote`
 --
 
-DROP TABLE IF EXISTS `VOTE`;
-CREATE TABLE IF NOT EXISTS `VOTE` (
+CREATE TABLE  `VOTE` (
   `id_game` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id_game`)
@@ -336,8 +330,7 @@ INSERT INTO `VOTE` (`id_game`, `id_user`) VALUES
 -- Structure de la table `words`
 --
 
-DROP TABLE IF EXISTS `WORDS`;
-CREATE TABLE IF NOT EXISTS `WORDS` (
+CREATE TABLE  `WORDS` (
   `id_words` int(11) NOT NULL AUTO_INCREMENT,
   `word` varchar(27) NOT NULL,
   `id_subject` int(11) NOT NULL,
